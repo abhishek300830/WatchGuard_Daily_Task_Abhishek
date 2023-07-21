@@ -12,4 +12,4 @@ print(added_value)
 
 # we can also use seperater while printing value
 
-print(1, 2, 3, 4, 5, sep="-")
+print(1, 2, 3, 4, 5, sep="-")  # 1-2-3-4-5

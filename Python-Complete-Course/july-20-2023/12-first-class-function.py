@@ -4,7 +4,7 @@ def greet():
 hello = greet
 hello()
 
-# a good example of it is
+# here dictionary of function are created
 
 avg = lambda sequence: sum(sequence) / len(sequence)
 total = lambda sequence: sum(sequence)

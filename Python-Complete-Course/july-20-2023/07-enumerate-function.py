@@ -15,10 +15,13 @@ for index, friend in enumerate(friends):
     print(friend)
 
 
-# we can also use it with list
+# we can also use it with list and others
 
 enumerated_list = list(enumerate(friends))
 enumerated_dict = dict(enumerate(friends))
 print(enumerated_list)  # list of tuples
-print(enumerated_dict)  
+print(enumerated_dict)  # dict
    
+# we can also give argumment to start with given no.
+
+enumerate(friends,start=4)
