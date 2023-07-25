@@ -1,0 +1,4 @@
+name,age,university,degree
+Abhishek,21,chandigarh university,btech
+Kunal,22,chandigarh university,btech
+Chirag,23,chandigarh university,btech
