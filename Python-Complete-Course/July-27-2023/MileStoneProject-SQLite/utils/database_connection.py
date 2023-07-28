@@ -6,7 +6,7 @@ class DatabaseConnection:
         self.connection = None
 
     def __enter__(self):
-        self.connection = sqlite3.connect('data.db')
+        self.connection = sqlite3.connect('July-27-2023\MileStoneProject-SQLite\data.db')
         return self.connection
 
     def __exit__(self, exc_type, exc_val, exc_tb):

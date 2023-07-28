@@ -1,14 +1,16 @@
 # used to store and retrieve data
-# import sqlite3
+import sqlite3
 from .database_connection import DatabaseConnection
 from typing import List, Dict
 
 
 def create_book_table() -> None:
     with DatabaseConnection() as connection:
-        cursor = connection.cursor()
-        cursor.execute("CREATE TABLE IF NOT EXISTS books(name text primary key, author text, read integer)")
-
+        try:
+            cursor = connection.cursor()
+            cursor.execute("CREATE TABLE IF NOT EXISTS books(name text primary key, author text, read integer)")
+        except sqlite3.Error as error:
+            print("Error",error)
 
 # def create_book_table():
 #     connection = sqlite3.connect("data.db")
