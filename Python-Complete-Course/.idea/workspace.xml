@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="090f0acc-fc45-45e2-b82a-d69e02dc019d" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/WatchGuard_daily_task_Abhishek.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Insecure-design-demo-react-app/my-app/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/../Insecure-design-demo-react-app/my-app/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Insecure-design-demo-react-app/my-app/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../Insecure-design-demo-react-app/my-app/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Insecure-design-demo-react-app/my-app/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/../Insecure-design-demo-react-app/my-app/src/App.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Insecure-design-demo-react-app/my-app/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/../Insecure-design-demo-react-app/my-app/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Insecure-design-demo-react-app/my-app/src/App.test.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Insecure-design-demo-react-app/my-app/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/../Insecure-design-demo-react-app/my-app/src/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Insecure-design-demo-react-app/my-app/src/logo.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Insecure-design-demo-react-app/my-app/src/reportWebVitals.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Insecure-design-demo-react-app/my-app/src/setupTests.js" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "customColor": "",
+  "associatedIndex": 2
+}]]></component>
+  <component name="ProjectId" id="2TI9kK93ctUhdATDlnZEGqB5bKJ" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main"
+  }
+}]]></component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="090f0acc-fc45-45e2-b82a-d69e02dc019d" name="Changes" comment="" />
+      <created>1690719870395</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1690719870395</updated>
+    </task>
+    <servers />
+  </component>
+</project>
