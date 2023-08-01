@@ -1,7 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="090f0acc-fc45-45e2-b82a-d69e02dc019d" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Aug-01-2023/00-simple-html.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Aug-01-2023/01-more-complex-parsing.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Aug-01-2023/02-class-html-parsing.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Aug-01-2023/03-scraping-books.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Aug-01-2023/A Quote Scrapper-MileStone Project/.idea/A Quote Scrapper-MileStone Project.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Aug-01-2023/A Quote Scrapper-MileStone Project/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Aug-01-2023/A Quote Scrapper-MileStone Project/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Aug-01-2023/A Quote Scrapper-MileStone Project/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Aug-01-2023/A Quote Scrapper-MileStone Project/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Aug-01-2023/A Quote Scrapper-MileStone Project/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Aug-01-2023/A Quote Scrapper-MileStone Project/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Aug-01-2023/A Quote Scrapper-MileStone Project/app.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Aug-01-2023/A Quote Scrapper-MileStone Project/locators/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Aug-01-2023/A Quote Scrapper-MileStone Project/locators/quote_locators.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Aug-01-2023/A Quote Scrapper-MileStone Project/locators/quote_page_locators.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Aug-01-2023/A Quote Scrapper-MileStone Project/pages/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Aug-01-2023/A Quote Scrapper-MileStone Project/pages/quotes_page.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Aug-01-2023/A Quote Scrapper-MileStone Project/parsors/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Aug-01-2023/A Quote Scrapper-MileStone Project/parsors/quote.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../.idea/.gitignore" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../.idea/WatchGuard_daily_task_Abhishek.iml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
@@ -18,20 +40,32 @@
       <change beforePath="$PROJECT_DIR$/../Insecure-design-demo-react-app/my-app/src/logo.svg" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../Insecure-design-demo-react-app/my-app/src/reportWebVitals.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../Insecure-design-demo-react-app/my-app/src/setupTests.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/Python-Complete-Course.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Python-Complete-Course.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "customColor": "",
-  "associatedIndex": 2
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 2
+}</component>
   <component name="ProjectId" id="2TI9kK93ctUhdATDlnZEGqB5bKJ" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -40,7 +74,10 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "main"
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "C:/Programming/WatchGuard_daily_task_Abhishek/Python-Complete-Course/Aug-01-2023/A Quote Scrapper-MileStone Project",
+    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable"
   }
 }]]></component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
