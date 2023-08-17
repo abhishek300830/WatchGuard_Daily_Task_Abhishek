@@ -21,4 +21,3 @@ for file_name in file_list:
         letter_list_2.append(file.read().strip("\n"))
         
 print(letter_list_2)
-print(letter_list_2)
