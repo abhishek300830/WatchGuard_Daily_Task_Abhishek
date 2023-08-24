@@ -5,25 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="090f0acc-fc45-45e2-b82a-d69e02dc019d" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Aug-01-2023/00-simple-html.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Aug-01-2023/01-more-complex-parsing.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Aug-01-2023/02-class-html-parsing.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Aug-01-2023/03-scraping-books.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Aug-01-2023/A Quote Scrapper-MileStone Project/.idea/A Quote Scrapper-MileStone Project.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Aug-01-2023/A Quote Scrapper-MileStone Project/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Aug-01-2023/A Quote Scrapper-MileStone Project/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Aug-01-2023/A Quote Scrapper-MileStone Project/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Aug-01-2023/A Quote Scrapper-MileStone Project/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Aug-01-2023/A Quote Scrapper-MileStone Project/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Aug-01-2023/A Quote Scrapper-MileStone Project/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Aug-01-2023/A Quote Scrapper-MileStone Project/app.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Aug-01-2023/A Quote Scrapper-MileStone Project/locators/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Aug-01-2023/A Quote Scrapper-MileStone Project/locators/quote_locators.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Aug-01-2023/A Quote Scrapper-MileStone Project/locators/quote_page_locators.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Aug-01-2023/A Quote Scrapper-MileStone Project/pages/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Aug-01-2023/A Quote Scrapper-MileStone Project/pages/quotes_page.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Aug-01-2023/A Quote Scrapper-MileStone Project/parsors/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Aug-01-2023/A Quote Scrapper-MileStone Project/parsors/quote.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Banking_Mangement_System/main.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Banking_Mangement_System/src/controllers/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Banking_Mangement_System/src/helpers/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Banking_Mangement_System/src/utils/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Banking_Mangement_System/src/views/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Unit-testing-complete-course/pytest_test.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Unit-testing-complete-course/setup_teardown.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../.idea/.gitignore" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../.idea/WatchGuard_daily_task_Abhishek.iml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
@@ -40,7 +28,6 @@
       <change beforePath="$PROJECT_DIR$/../Insecure-design-demo-react-app/my-app/src/logo.svg" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../Insecure-design-demo-react-app/my-app/src/reportWebVitals.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../Insecure-design-demo-react-app/my-app/src/setupTests.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/Python-Complete-Course.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Python-Complete-Course.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -76,10 +63,29 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "git-widget-placeholder": "main",
-    "last_opened_file_path": "C:/Programming/WatchGuard_daily_task_Abhishek/Python-Complete-Course/Aug-01-2023/A Quote Scrapper-MileStone Project",
+    "last_opened_file_path": "C:/Programming/WatchGuard_daily_task_Abhishek/Python-Complete-Course/Unit-testing-complete-course",
     "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable"
   }
 }]]></component>
+  <component name="RunManager">
+    <configuration name="unit test" type="tests" factoryName="py.test">
+      <module name="Python-Complete-Course" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="C:\Users\abkumar\AppData\Local\Programs\Python\Python311\python.exe" />
+      <option name="SDK_NAME" value="Python 3.11" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_keywords" value="&quot;&quot;" />
+      <option name="_new_parameters" value="&quot;&quot;" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;&quot;" />
+      <option name="_new_targetType" value="&quot;PATH&quot;" />
+      <method v="2" />
+    </configuration>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
