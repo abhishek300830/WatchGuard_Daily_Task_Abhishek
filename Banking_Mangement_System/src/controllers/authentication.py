@@ -1,6 +1,7 @@
 import hashlib
 
-from src.models.database import search_by_username, insert_into_auth_table, update_password_in_auth
+from src.models.database import get_item, insert_item, update_item
+from src.utils import queries
 
 
 class Authentication:
@@ -13,7 +14,7 @@ class Authentication:
         self.password = password
 
     def login(self):
-        valid_user = search_by_username(self.username)
+        valid_user = get_item(queries.SEARCH_USER_BY_USERNAME, (self.username,))
         if valid_user is None:
             print("Please Enter Valid Username...")
         else:
@@ -33,7 +34,7 @@ class Authentication:
         self.password = old_password
         hashed_password = self.hashing_password()
 
-        valid_user_details = search_by_username(username)
+        valid_user_details = get_item(queries.SEARCH_USER_BY_USERNAME, (username,))
         if valid_user_details is None:
             print("Please Enter Valid Username...")
         else:
@@ -41,7 +42,7 @@ class Authentication:
             if valid_password == hashed_password:
                 self.password = new_password
                 hashed_new_password = self.hashing_password()
-                update_password_in_auth(username, hashed_new_password)
+                update_item(queries.UPDATE_PASSWORD_IN_AUTH, (hashed_new_password, username))
                 print("Password Updated Successfully")
             else:
                 print("Your Old Password is Wrong...")
@@ -56,6 +57,6 @@ class Authentication:
 
     def create_customer_auth_account(self):
         hashed_password = self.hashing_password()
-        insert_into_auth_table(self.username, hashed_password, "Customer")
-        user_auth = search_by_username(self.username)
+        insert_item(queries.INSERT_INTO_AUTH_TABLE, (self.username, hashed_password, "Customer"))
+        user_auth = get_item(queries.SEARCH_USER_BY_USERNAME, (self.username,))
         return user_auth[0]

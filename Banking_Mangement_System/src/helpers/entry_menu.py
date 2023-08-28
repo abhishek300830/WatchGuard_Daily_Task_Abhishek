@@ -7,11 +7,53 @@ from src.controllers.customer import Customer
 from src.helpers.validators import validate_number, validate_username, validate_password, validate_name, validate_email, \
     validate_phone
 from src.utils.prompts import CUSTOMER_MENU, MANAGER_MENU, CASHIER_MENU
+from src.controllers.user import User
+from src.models.database import get_item
+from src.utils import queries
+from src.utils.prompts import LOGIN_MENU
+
+
+class LoginView:
+
+    def __init__(self):
+        self.user_is_verified = None
+        self.username = any
+        self.password = any
+
+    def prompt_input_username_password(self):
+        self.username = input("Enter your Username : ")
+        self.password = maskpass.askpass(prompt="Enter your Password : ", mask='*')
+
+    def initializing_user(self, user_id, role):
+        user_details = get_item(queries.SEARCH_USER_BY_ID, (user_id,))
+        self.user_is_verified = user_details[7]
+
+        filtered_user_details = user_details[1:7]
+        current_user = User(role, *filtered_user_details)
+        return current_user
+
+    def login_view(self):
+        user_choice = input(LOGIN_MENU)
+
+        while user_choice != '2':
+            if user_choice == '1':
+                self.prompt_input_username_password()
+                auth = Authentication(username=self.username, password=self.password)
+                user_details = auth.login()
+
+                if user_details is not None:
+                    user_id = user_details[0]
+                    role = user_details[3]
+                    user = self.initializing_user(user_id, role)
+                    EntryMenu(user, user_id, self.user_is_verified)
+            else:
+                print("Invalid Input...Try Again...")
+            user_choice = input(LOGIN_MENU)
 
 
 class EntryMenu:
 
-    def __init__(self, user, user_id):
+    def __init__(self, user, user_id, is_verified):
         self.user = user
         self.user_id = user_id
 
@@ -21,7 +63,11 @@ class EntryMenu:
         elif user.role == "Cashier":
             self.cashier_menu()
         else:
-            self.customer_menu()
+            if is_verified:
+                self.customer_menu()
+            else:
+                print("*****************************************************")
+                print("Your Account is Not Verified...Contact Bank Manager.")
 
     def customer_menu(self):
         customer_choice = input(CUSTOMER_MENU)
@@ -216,9 +262,11 @@ class EntryMenu:
 
     def view_customer_balance(self, instance):
         user_account_details = instance.view_balance(self.user_id)
+        account_number = user_account_details[1]
         account_balance = user_account_details[3]
         pending_balance = user_account_details[4]
         print("*********************************")
+        print("Account Number : ", account_number)
         print("Account Balance : ", account_balance)
         print("Pending Balance : ", pending_balance)
 
@@ -226,7 +274,7 @@ class EntryMenu:
         account_transactions = instance.print_passbook(self.user_id)
         if account_transactions:
             print("*********** Account Passbook *************")
-            print("Account Number : ", account_transactions[0][0])
+            print("Account Number : ", account_transactions[0][1])
             for idx, transaction in enumerate(account_transactions):
                 print(
                     f"{idx + 1}. {transaction[2]}ed Amount {transaction[3]} Done By {transaction[5]} ( Date "
@@ -297,7 +345,6 @@ class EntryMenu:
             self.__input_amount_to_deposit()
 
     def withdraw_from_customer_account(self):
-        # user_account = input("Enter Account Number : ")
         self.__input_user_account()
         instance = Account()
         is_valid_account = instance.verify_account(self.user_account)
@@ -343,7 +390,10 @@ class EntryMenu:
 
             customer = Customer()
             customer.edit_customer_details(user_id, self.attribute_to_update, self.attribute_value, self.user.role)
-            print("Details Modified Successfully.")
+            if self.user.role == "Manager":
+                print("Details Modified Successfully.")
+            else:
+                print("Modification Request Send to Manager for Approval.")
 
     def __input_attribute_to_update(self):
         self.attribute_to_update = None
@@ -409,5 +459,6 @@ class EntryMenu:
 
         instance = BankEmployee(self.user.role, self.user.name, self.user.email, self.user.phone_no,
                                 self.user.id_proof_type, self.user.id_proof, self.user.gender)
-        print("Pending Withdraw Requests")
         instance.check_for_withdraw_requests()
+        instance.check_for_new_registration_request()
+        instance.check_for_user_modification_request()

@@ -1,4 +1,4 @@
-from src.helpers.login_view import LoginView
+from src.helpers.entry_menu import LoginView
 
 
 def main():

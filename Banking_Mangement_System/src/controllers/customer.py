@@ -1,6 +1,7 @@
 from src.controllers.user import User
-from src.models.database import insert_into_users_table, insert_into_account_table, search_users_by_id, \
-    update_users_by_id, insert_into_user_detail_modification
+from src.models.database import get_item, insert_item, \
+    update_item
+from src.utils import queries
 
 
 class Customer(User):
@@ -12,7 +13,7 @@ class Customer(User):
             verified = 0
         customer_details = (
             user_id, self.name, self.email, self.phone_no, self.id_proof_type, self.id_proof, self.gender, verified)
-        insert_into_users_table(customer_details)
+        insert_item(queries.INSERT_INTO_USERS_TABLE, customer_details)
         print("********************************")
         print("Customer Registered Successfully.")
         self.create_customer_account(user_id)
@@ -25,18 +26,19 @@ class Customer(User):
         account_balance = 2500
         pending_balance = 0
         account_details = (user_id, account_number, account_type, account_balance, pending_balance)
-        insert_into_account_table(account_details)
+        insert_item(queries.INSERT_INTO_ACCOUNT_TABLE, account_details)
 
     @staticmethod
     def edit_customer_details(user_id, attribute_to_update, attribute_value, role):
         if role == 'Manager':
-            update_users_by_id(user_id, attribute_to_update, attribute_value)
+            update_item(queries.UPDATE_USERS_BY_ID.format(attribute_to_update), (attribute_value, user_id))
         else:
-            insert_into_user_detail_modification(user_id, attribute_to_update, attribute_value, "Pending")
+            insert_item(queries.INSERT_INTO_USER_DETAIL_MODIFICATION,
+                        (user_id, attribute_to_update, attribute_value, "Pending"))
 
     @staticmethod
     def view_customer_details(user_id):
-        user_details = search_users_by_id(user_id)
+        user_details = get_item(queries.SEARCH_USER_BY_ID, (user_id,))
         print("*******************************************")
         print("Customer Name : ", user_details[1])
         print("Customer Email : ", user_details[2])
