@@ -228,7 +228,7 @@ class EntryMenu:
         self.__input_new_password()
 
         instance = Authentication(self.new_user_name, self.new_password)
-        user_id = instance.create_customer_auth_account()
+        user_id = instance.create_customer_auth()
         return user_id
 
     def __input_new_username(self):

@@ -58,7 +58,7 @@ class Authentication:
     def __assigning_role(self, user_role):
         self.role = user_role
 
-    def create_customer_auth_account(self):
+    def create_customer_auth(self):
         hashed_password = self.__hashing_password()
         insert_item(queries.INSERT_INTO_AUTH_TABLE, (self.username, hashed_password, "Customer"))
         user_auth = get_item(queries.SEARCH_USER_BY_USERNAME, (self.username,))

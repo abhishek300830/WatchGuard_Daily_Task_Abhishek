@@ -16,9 +16,12 @@ class Customer(User):
             user_id, self.name, self.email, self.phone_no, self.id_proof_type, self.id_proof, self.gender, verified)
         insert_item(queries.INSERT_INTO_USERS_TABLE, customer_details)
         print("********************************")
-        print("Customer Registered Successfully.")
         self.create_customer_account(user_id)
-        print("Account Created Successfully.")
+
+        if user_role == "Manager":
+            print("Account Created Successfully.")
+        else:
+            print("Account Approval Request send to Manager")
 
     def create_customer_account(self, user_id):
         account_number = str(int(user_id) * 1000)
