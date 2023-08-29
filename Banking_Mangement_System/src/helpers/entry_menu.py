@@ -1,5 +1,6 @@
 import maskpass
 
+from tabulate import tabulate
 from src.controllers.account import Account
 from src.controllers.authentication import Authentication
 from src.controllers.bank_employee import BankEmployee
@@ -47,6 +48,7 @@ class LoginView:
                     user = self.initializing_user(user_id, role)
                     EntryMenu(user, user_id, self.user_is_verified)
             else:
+                print("*****************************")
                 print("Invalid Input...Try Again...")
             user_choice = input(LOGIN_MENU)
 
@@ -148,7 +150,9 @@ class EntryMenu:
             cashier_choice = input(CASHIER_MENU)
 
     def input_new_customer_details(self):
+        print("********************************")
         print("Customer Account Creation Portal")
+
         self.__input_customer_name()
         self.__input_customer_email()
         self.__input_customer_phone_no()
@@ -178,7 +182,7 @@ class EntryMenu:
         self.customer_phone_no = input("Enter Customer Phone No: ")
         is_valid_phone = validate_phone(self.customer_phone_no)
         if is_valid_phone is None:
-            print("Please Enter Valid Phone No.")
+            print("Please Enter Valid Phone No...")
             self.__input_customer_phone_no()
 
     def __input_customer_id_proof_type(self):
@@ -192,6 +196,7 @@ class EntryMenu:
                 self.customer_id_proof_type = "Pan Card"
                 break
             else:
+                print("****************************")
                 print("Please Enter Valid Input ...")
 
     def __input_customer_id_proof(self):
@@ -215,6 +220,7 @@ class EntryMenu:
                 self.customer_gender = "Other"
                 break
             else:
+                print("****************************")
                 print("Please Enter Valid Input ...")
 
     def create_customer_auth_account(self):
@@ -265,21 +271,31 @@ class EntryMenu:
         account_number = user_account_details[1]
         account_balance = user_account_details[3]
         pending_balance = user_account_details[4]
-        print("*********************************")
-        print("Account Number : ", account_number)
-        print("Account Balance : ", account_balance)
-        print("Pending Balance : ", pending_balance)
+
+        my_account_details = [
+            ["Account Number", account_number],
+            ["Account Balance", account_balance],
+            ["Pending Balance", pending_balance]
+        ]
+        print(tabulate(my_account_details, tablefmt="grid"))
 
     def print_customer_passbook(self, instance):
         account_transactions = instance.print_passbook(self.user_id)
         if account_transactions:
-            print("*********** Account Passbook *************")
+            print("*************** Account Passbook *****************")
             print("Account Number : ", account_transactions[0][1])
+
+            my_transactions_data = []
+            headings = ["Sr No", "Transaction Type", "Amount", "Done By", "Date and Time"]
+
             for idx, transaction in enumerate(account_transactions):
-                print(
-                    f"{idx + 1}. {transaction[2]}ed Amount {transaction[3]} Done By {transaction[5]} ( Date "
-                    f"and Time : {transaction[4]} )")
+                transaction_list = [idx + 1, transaction[2], transaction[3], transaction[5], transaction[4]]
+                my_transactions_data.append(transaction_list)
+
+            print(tabulate(my_transactions_data, headers=headings, tablefmt="grid"))
+
         else:
+            print("*************************************")
             print("No Transactions Available to Show.")
 
     def transfer_to_another_account(self, instance):
@@ -292,17 +308,22 @@ class EntryMenu:
             self.__input_account_to_transfer()
             account_details = instance.verify_account(self.account_to_transfer)
             if account_details is None:
+                print("*******************************")
                 print("No Account Found...Try Again...")
+                print("*******************************")
             else:
                 instance.deposit_amount(self.amount_to_transfer, self.user.role)
                 instance.set_customer_account_details(self.user_id)
                 instance.withdraw_amount(self.amount_to_transfer, self.user.role)
+                print("*******************************")
                 print("Amount Transferred Successfully.")
+                print("*******************************")
 
     def __input_amount_to_transfer(self):
         self.amount_to_transfer = input("Enter Amount to Transfer : ")
         is_valid_amount = validate_number(self.amount_to_transfer)
         if is_valid_amount is None:
+            print("*******************************")
             print("Please Enter Correct Amount...")
             self.__input_amount_to_transfer()
 
@@ -310,6 +331,7 @@ class EntryMenu:
         self.account_to_transfer = input("Enter Account Number of Receiver Account : ")
         is_valid_account = validate_number(self.account_to_transfer)
         if is_valid_account is None:
+            print("*************************************")
             print("Please Enter Valid Account Number...")
             self.__input_account_to_transfer()
 
@@ -324,16 +346,20 @@ class EntryMenu:
         instance = Account()
         is_valid_account = instance.verify_account(self.user_account)
         if is_valid_account is None:
+            print("*************************************")
             print("Account Not Found...Try Again...")
         else:
             self.__input_amount_to_deposit()
             instance.deposit_amount(self.amount_to_deposit, self.user.role)
+            print("*************************************")
             print("Account Credited Successfully.")
+            print("*************************************")
 
     def __input_user_account(self):
         self.user_account = input("Enter Account Number : ")
         is_valid_user_account = validate_number(self.user_account)
         if is_valid_user_account is None:
+            print("*************************************")
             print("Enter Valid User Account.")
             self.__input_user_account()
 
@@ -341,6 +367,7 @@ class EntryMenu:
         self.amount_to_deposit = input("Enter Amount you want to deposit : ")
         is_valid_amount = validate_number(self.amount_to_deposit)
         if is_valid_amount is None:
+            print("*************************************")
             print("Please Enter Valid Amount...")
             self.__input_amount_to_deposit()
 
@@ -349,19 +376,25 @@ class EntryMenu:
         instance = Account()
         is_valid_account = instance.verify_account(self.user_account)
         if is_valid_account is None:
+            print("*************************************")
             print("Account Not Found...Try Again...")
         else:
             self.__input_amount_to_withdraw()
             instance.withdraw_amount(self.amount_to_withdraw, self.user.role)
             if self.user.role == "Cashier" and int(self.amount_to_withdraw) >= 10000:
+                print("*************************************")
                 print("Withdraw Request Sent for Approval.")
+                print("*************************************")
             else:
+                print("*************************************")
                 print("Account Debited Successfully.")
+                print("*************************************")
 
     def __input_amount_to_withdraw(self):
         self.amount_to_withdraw = input("Enter Amount you want to deposit : ")
         is_valid_amount = validate_number(self.amount_to_withdraw)
         if is_valid_amount is None:
+            print("*************************************")
             print("Please Enter Valid Amount...")
             self.__input_amount_to_withdraw()
 
@@ -371,6 +404,7 @@ class EntryMenu:
         valid_account_details = instance.verify_account(self.user_account)
 
         if valid_account_details is None:
+            print("*************************************")
             print("Account Not Found...Try Again...")
         else:
             user_id = valid_account_details[0]
@@ -382,6 +416,7 @@ class EntryMenu:
         instance = Account()
         is_valid_account = instance.verify_account(self.user_account)
         if is_valid_account is None:
+            print("*************************************")
             print("Account Not Found...Try Again...")
         else:
             user_id = is_valid_account[0]
@@ -391,9 +426,13 @@ class EntryMenu:
             customer = Customer()
             customer.edit_customer_details(user_id, self.attribute_to_update, self.attribute_value, self.user.role)
             if self.user.role == "Manager":
+                print("*************************************")
                 print("Details Modified Successfully.")
+                print("*************************************")
             else:
+                print("**************************************************")
                 print("Modification Request Send to Manager for Approval.")
+                print("***************************************************")
 
     def __input_attribute_to_update(self):
         self.attribute_to_update = None
@@ -418,12 +457,14 @@ class EntryMenu:
                 self.__input_attribute_gender()
                 break
             else:
+                print("*************************************")
                 print("Please Enter Valid Input...")
 
     def __input_attribute_name(self):
         self.attribute_value = input("Enter New Name : ")
         is_valid_name = validate_name(self.attribute_value)
         if is_valid_name is None:
+            print("*************************************")
             print("Invalid Name ... Enter Again...")
             self.__input_attribute_name()
 
@@ -431,6 +472,7 @@ class EntryMenu:
         self.attribute_value = input("Enter New Email : ")
         is_valid_email = validate_email(self.attribute_value)
         if is_valid_email is None:
+            print("*************************************")
             print("Please Enter Valid Email ID.")
             self.__input_attribute_email()
 
@@ -438,6 +480,7 @@ class EntryMenu:
         self.attribute_value = input("Enter New Phone Number : ")
         is_valid_number = validate_number(self.attribute_value)
         if is_valid_number is None:
+            print("*************************************")
             print("Please Enter Valid Number.")
             self.__input_attribute_phone_no()
 
@@ -453,6 +496,7 @@ class EntryMenu:
             elif user_choice == '3':
                 self.attribute_value = "Other"
             else:
+                print("*************************************")
                 print("Please Enter Valid Input...")
 
     def check_for_pending_requests(self):

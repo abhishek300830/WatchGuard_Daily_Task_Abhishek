@@ -18,6 +18,7 @@ class Account:
     def withdraw_amount(self, amount, done_by):
         operation = 'Debit'
         final_balance = str(self.account_balance - float(amount))
+
         if done_by == "Manager":
             update_item(queries.UPDATE_AMOUNT_IN_ACCOUNT, (final_balance, self.account_number))
             update_item(queries.UPDATE_TRANSACTION_OF_ACCOUNT, (self.account_number, operation, amount, done_by))
@@ -32,8 +33,8 @@ class Account:
                 update_item(queries.UPDATE_AMOUNT_IN_ACCOUNT, (final_balance, self.account_number))
                 update_item(queries.UPDATE_TRANSACTION_OF_ACCOUNT, (self.account_number, operation, amount, done_by))
 
-    @staticmethod
-    def view_balance(user_id):
+
+    def view_balance(self, user_id):
         user_account_details = get_item(queries.SEARCH_IN_USER_ACCOUNT_BY_ID, (user_id,))
         return user_account_details
 
@@ -57,6 +58,7 @@ class Account:
     def verify_account(self, user_account):
         self.account_number = user_account
         account_details = get_item(queries.SEARCH_IN_USER_ACCOUNT, (user_account,))
+
         if account_details is not None:
             self.account_number = account_details[1]
             self.account_type = account_details[2]

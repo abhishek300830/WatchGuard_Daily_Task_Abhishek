@@ -8,7 +8,7 @@ def validate_name(name):
 
 
 def validate_username(username):
-    pattern = '[A-Za-z1-9]+'
+    pattern = '[A-Za-z1-9_]+'
     matcher = re.fullmatch(pattern, username)
     return matcher
 
