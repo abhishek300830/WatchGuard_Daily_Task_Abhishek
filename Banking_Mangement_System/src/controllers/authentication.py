@@ -31,24 +31,24 @@ class Authentication:
                 print("Please Enter Correct Password...")
                 return None
 
-    def change_password(self, username, old_password, new_password):
+    def change_password(self, user_id, old_password, new_password):
         self.password = old_password
-        hashed_password = self.__hashing_password()
+        hashed_old_password = self.__hashing_password()
 
-        valid_user_details = get_item(queries.SEARCH_USER_BY_USERNAME, (username,))
+        valid_user_details = get_item(queries.SEARCH_AUTH_BY_ID, (user_id,))
 
-        if valid_user_details is None:
-            print("Please Enter Valid Username...")
-        else:
-            valid_password = valid_user_details[2]
+        valid_password = valid_user_details[2]
 
-            if valid_password == hashed_password:
-                self.password = new_password
-                hashed_new_password = self.__hashing_password()
-                update_item(queries.UPDATE_PASSWORD_IN_AUTH, (hashed_new_password, username))
-                print("Password Updated Successfully")
+        if valid_password == hashed_old_password:
+            self.password = new_password
+            hashed_new_password = self.__hashing_password()
+            if hashed_new_password == valid_password:
+                print("Your Old Password is same as New Password ... Try Again ...")
             else:
-                print("Your Old Password is Wrong...")
+                update_item(queries.UPDATE_PASSWORD_IN_AUTH, (hashed_new_password, user_id))
+                print("Password Updated Successfully")
+        else:
+            print("Your Old Password is Wrong...")
 
     def __hashing_password(self):
         encoded_password = self.password.encode()

@@ -14,7 +14,7 @@ def validate_username(username):
 
 
 def validate_phone(phone):
-    pattern = '[0-9]+'
+    pattern = '[0-9]{10}'
     matcher = re.fullmatch(pattern, phone)
     return matcher
 

@@ -1,6 +1,8 @@
 # SEARCH QUERIES
 SEARCH_USER_BY_USERNAME = "SELECT * FROM authentication WHERE username = %s"
 
+SEARCH_AUTH_BY_ID = "SELECT * FROM authentication WHERE id = %s"
+
 SEARCH_USER_BY_ID = "SELECT * FROM users Where id = %s"
 
 SEARCH_IN_USER_ACCOUNT = "select * from user_account where account_number = %s"
@@ -33,7 +35,8 @@ INSERT_INTO_ACCOUNT_WITHDRAWN_REQUESTS = ("insert into account_withdraw_requests
 # UPDATE QUERIES
 UPDATE_USERS_BY_ID = "update users set {} = %s where id = %s"
 
-UPDATE_PASSWORD_IN_AUTH = "update authentication set password = %s where username = %s"
+UPDATE_PASSWORD_IN_AUTH = "update authentication set password = %s where id = %s"
+
 
 UPDATE_IN_ACCOUNT_WITHDRAWN_REQUESTS = ("update account_withdraw_requests set status = %s,approved_by = %s,comments = "
                                         "%s where id = %s")
@@ -45,6 +48,6 @@ UPDATE_AMOUNT_IN_ACCOUNT = "UPDATE user_account SET account_balance = %s WHERE a
 UPDATE_TRANSACTION_OF_ACCOUNT = ("INSERT into account_transactions (account_number,transaction_type,amount,created_at,"
                                  "done_by) values (%s,%s,%s,current_timestamp(),%s)")
 
-UPDATE_VERIFIED_STATUS_OF_CUSTOMER = "update users set verified = 1 where id = %s"
+UPDATE_VERIFIED_STATUS_OF_CUSTOMER = "update users set verified = %s where id = %s"
 
 UPDATE_USER_DETAIL_MODIFICATION_STATUS = "update user_details_modification set status = %s where id = %s"

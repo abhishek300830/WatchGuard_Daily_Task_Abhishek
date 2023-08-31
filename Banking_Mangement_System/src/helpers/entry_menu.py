@@ -65,8 +65,11 @@ class EntryMenu:
         elif user.role == "Cashier":
             self.cashier_menu()
         else:
-            if is_verified:
+            if is_verified == 1:
                 self.customer_menu()
+            elif is_verified == 2:
+                print("*****************************************************")
+                print("Your Account is Rejected By Manager...Contact Bank Manager.")
             else:
                 print("*****************************************************")
                 print("Your Account is Not Verified...Contact Bank Manager.")
@@ -239,11 +242,10 @@ class EntryMenu:
             self.__input_new_username()
 
     def change_user_password(self):
-        self.__input_username()
         self.__input_old_password()
         self.__input_new_password()
         instance = Authentication()
-        instance.change_password(self.user_name, self.old_password, self.new_password)
+        instance.change_password(self.user_id, self.old_password, self.new_password)
 
     def __input_username(self):
         self.user_name = input("Enter Username :")
@@ -380,18 +382,23 @@ class EntryMenu:
             print("Account Not Found...Try Again...")
         else:
             self.__input_amount_to_withdraw()
-            instance.withdraw_amount(self.amount_to_withdraw, self.user.role)
-            if self.user.role == "Cashier" and int(self.amount_to_withdraw) >= 10000:
-                print("*************************************")
-                print("Withdraw Request Sent for Approval.")
-                print("*************************************")
+            if int(instance.account_balance) > int(self.amount_to_withdraw):
+                instance.withdraw_amount(self.amount_to_withdraw, self.user.role)
+                if self.user.role == "Cashier" and int(self.amount_to_withdraw) >= 10000:
+                    print("*************************************")
+                    print("Withdraw Request Sent for Approval.")
+                    print("*************************************")
+                else:
+                    print("*************************************")
+                    print("Account Debited Successfully.")
+                    print("*************************************")
             else:
-                print("*************************************")
-                print("Account Debited Successfully.")
-                print("*************************************")
+                print("****************************************************")
+                print("Customer Account Balance is : ",instance.account_balance)
+                print("Amount to Transfer is more than Customer Account Balance.")
 
     def __input_amount_to_withdraw(self):
-        self.amount_to_withdraw = input("Enter Amount you want to deposit : ")
+        self.amount_to_withdraw = input("Enter Amount you want to withdraw : ")
         is_valid_amount = validate_number(self.amount_to_withdraw)
         if is_valid_amount is None:
             print("*************************************")

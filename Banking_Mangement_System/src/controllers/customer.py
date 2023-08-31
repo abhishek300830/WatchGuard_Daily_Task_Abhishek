@@ -42,12 +42,13 @@ class Customer(User):
         user_details = get_item(queries.SEARCH_USER_BY_ID, (user_id,))
 
         user_details_list = [
-            ["Customer Name", user_details[1]],
-            ["Customer Email", user_details[2]],
-            ["Customer Phone", user_details[3]],
-            ["Customer ID Type", user_details[4]],
-            ["Customer ID Number", user_details[5]],
-            ["Customer Gender", user_details[6]]
+            ["Name", user_details[1]],
+            ["Email", user_details[2]],
+            ["Phone", user_details[3]],
+            ["ID Type", user_details[4]],
+            ["ID Number", user_details[5]],
+            ["Gender", user_details[6]]
         ]
 
+        print("***** Customer Details *****")
         print(tabulate(user_details_list, tablefmt="grid"))
