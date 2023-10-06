@@ -23,3 +23,11 @@ Banking_Mangement_System/.env
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+__pycache__
+.venv
+instance
+
+fastapienv
+fastapivenv3
+project4env

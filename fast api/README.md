@@ -1,0 +1,1 @@
+create a fastapienv to run this project
