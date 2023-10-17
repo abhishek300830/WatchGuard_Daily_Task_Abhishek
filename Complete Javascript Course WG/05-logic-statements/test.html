@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="output"></div>
+    <script>
+      var output = document.getElementById("output");
+      var q = 1;
+      switch (q) {
+        case "1":
+          answer = "one";
+          break;
+        case 1:
+          answer = 1;
+          break;
+        case 2:
+          answer = "this is the one";
+          break;
+        default:
+          answer = "not working";
+      }
+      output.innerHTML = answer;
+    </script>
+  </body>
+</html>

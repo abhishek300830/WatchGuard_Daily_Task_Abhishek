@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1 id="output"></h1>
+    <script>
+      var question = prompt("ask me anything");
+      var randomNumber = Math.floor(Math.random() * 6);
+      switch (randomNumber) {
+        case 0:
+          answer = "it will work out";
+          break;
+        case 1:
+          answer = "Maybe maybe not";
+          break;
+        case 2:
+          answer = "Probably not";
+          break;
+        case 3:
+          answer = "Highly likely";
+          break;
+        default:
+          answer = "I don't know about that";
+      }
+
+      var output = (document.getElementById("output").innerHTML = answer);
+    </script>
+  </body>
+</html>

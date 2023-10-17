@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Rock Paper Scissor Game</h1>
+    <div id="computer"></div>
+    <div id="user"></div>
+
+    <script>
+      var userChoice = prompt("Rock, Paper, Scissor");
+
+      var computerChoice = Math.floor(Math.random() * 3);
+      switch (computerChoice) {
+        case 0:
+          computerChoice = "Rock";
+          break;
+        case 1:
+          computerChoice = "Paper";
+          break;
+        case 2:
+          computerChoice = "Scissor";
+          break;
+      }
+
+      var computer = (document.getElementById("computer").innerHTML =
+        "Computer Choice : " + computerChoice);
+
+      var user = (document.getElementById("user").innerHTML =
+        "User Choice : " + userChoice);
+    </script>
+  </body>
+</html>
