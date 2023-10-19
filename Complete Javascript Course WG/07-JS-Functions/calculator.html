@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Document</title>
+   </head>
+   <body>
+      <input type="number" id="num1" />
+      <input type="number" id="num2" />
+      <br />
+      <br />
+      <button id="add" onclick="add()">Add</button>
+      <button id="sub" onclick="sub()">Sub</button>
+      <button id="mul" onclick="mul()">Mul</button>
+      <button id="div" onclick="div()">Div</button>
+      <div id="output"></div>
+
+      <script>
+         num1 = document.getElementById("num1");
+         num2 = document.getElementById("num2");
+         output = document.getElementById("output");
+
+         function add() {
+            question = num1.value + " + " + num2.value;
+            answer = Number(num1.value) + Number(num2.value);
+
+            display(question, answer);
+         }
+         function sub() {
+            question = num1.value + " - " + num2.value;
+            answer = Number(num1.value) - Number(num2.value);
+
+            display(question, answer);
+         }
+         function mul() {
+            question = num1.value + " X " + num2.value;
+            answer = Number(num1.value) * Number(num2.value);
+
+            display(question, answer);
+         }
+         function divs() {
+            question = num1.value + " / " + num2.value;
+            answer = Number(num1.value) / Number(num2.value);
+
+            display(question, answer);
+         }
+
+         function display(question, answer) {
+            output.innerHTML += question + " = " + answer + "<Br>";
+         }
+      </script>
+   </body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="output"></div>
+    <script>
+      let output = document.getElementById("output");
+      let total = 0;
+      for (var x = 0; x < 1000; x++) {
+        if (x % 5 === 0) {
+          total += x;
+          output.innerHTML +=
+            "value of x = " + x + " subTotal = " + total + "<br>";
+        }
+      }
+      output.innerHTML += "Total = " + total;
+    </script>
+  </body>
+</html>

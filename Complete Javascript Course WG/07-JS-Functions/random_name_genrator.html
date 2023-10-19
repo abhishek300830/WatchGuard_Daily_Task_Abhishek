@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Document</title>
+   </head>
+   <body>
+      <div id="output"></div>
+      <button onclick="getRandomName()">Click Me</button>
+      <script>
+         output = document.getElementById("output");
+         var adj = ["super", "wonderful", "bad", "angry", "careful"];
+
+         function getRandomName() {
+            username = prompt("Enter your Name : ");
+            randomAdj = adj[Math.floor(Math.random() * adj.length)];
+            output.innerHTML += randomAdj + " " + username + "<br>";
+         }
+      </script>
+   </body>
+</html>
