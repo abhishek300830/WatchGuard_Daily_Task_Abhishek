@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Document</title>
+   </head>
+   <body onload="loadHeading()">
+      <div id="wrapper"></div>
+
+      <form action="">
+         <input type="button" value="click 1" onclick="myFun(this)" />
+         <input type="button" value="click 2" onclick="myFun(this)" />
+         <input type="button" value="click 3" onclick="myFun(this)" />
+      </form>
+
+      <script>
+         let output = document.getElementById("wrapper");
+
+         function myFun(t) {
+            t.value = "CLICKED";
+            console.log(t);
+            output.innerHTML = t.value;
+         }
+
+         function loadHeading() {
+            output.innerHTML = "hello this is onload";
+         }
+      </script>
+   </body>
+</html>

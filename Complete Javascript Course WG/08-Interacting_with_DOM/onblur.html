@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Document</title>
+   </head>
+   <body>
+      <div id="wrapper"></div>
+      <input type="text" name="" id="" onblur="myFunction(this)" />
+      <script>
+         let output = document.getElementById("wrapper");
+
+         function myFunction(t) {
+            console.log("on blur ...");
+            output.innerHTML = t.value;
+         }
+      </script>
+   </body>
+</html>

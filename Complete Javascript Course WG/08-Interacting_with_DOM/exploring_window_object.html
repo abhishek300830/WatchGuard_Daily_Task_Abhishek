@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Document</title>
+   </head>
+   <body>
+      <div id="wrapper"></div>
+      <script>
+         let output = document.getElementById("wrapper");
+         console.dir(window);
+
+         for (props in window) {
+            document.write(props + " " + window[props] + "<br>");
+         }
+
+         output.innerHTML += window.innerHeight + " " + window.innerWidth;
+         output.innerHTML += window.location;
+      </script>
+   </body>
+</html>

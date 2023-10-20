@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Document</title>
+   </head>
+   <body>
+      <img
+         src="https://media.istockphoto.com/id/1146517111/photo/taj-mahal-mausoleum-in-agra.jpg?s=612x612&w=0&k=20&c=vcIjhwUrNyjoKbGbAQ5sOcEzDUgOfCsm9ySmJ8gNeRk="
+         alt=""
+         onmouseover="handleMouseOver(this)"
+         id="image"
+         onmouseout="handleMouseOut(this)"
+         width="400px"
+      />
+
+      <script>
+         function handleMouseOver(t) {
+            t.src =
+               "https://media.istockphoto.com/id/962421230/photo/taj-mahal-front-view-reflected-on-the-reflection-pool.webp?b=1&s=170667a&w=0&k=20&c=UXyhUDdke18jhdZ6XGVpIPKf4YdrHUH0qb1kHU75yQ0=";
+         }
+
+         function handleMouseOut(t) {
+            t.src =
+               "https://media.istockphoto.com/id/1146517111/photo/taj-mahal-mausoleum-in-agra.jpg?s=612x612&w=0&k=20&c=vcIjhwUrNyjoKbGbAQ5sOcEzDUgOfCsm9ySmJ8gNeRk=";
+         }
+      </script>
+   </body>
+</html>

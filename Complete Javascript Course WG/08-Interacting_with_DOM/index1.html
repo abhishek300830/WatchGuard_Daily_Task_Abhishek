@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Document</title>
+   </head>
+   <body>
+      <div id="wrapper"></div>
+      <a href="index1.html">index1</a>
+      <a href="index2.html">index2</a>
+      <a href="index3.html">index3</a>
+
+      <input type="button" value="Back" onclick="goBack()" />
+      <input type="button" value="Print" onclick="print()" />
+      <input type="button" value="Prompt" onclick="prompt('Hello world')" />
+      <input type="button" value="alert" onclick="alert('Hello world')" />
+
+      <script>
+         var output = document.getElementById("wrapper");
+         function goBack() {
+            window.history.go(-1);
+
+            console.log(window.history);
+         }
+      </script>
+   </body>
+</html>

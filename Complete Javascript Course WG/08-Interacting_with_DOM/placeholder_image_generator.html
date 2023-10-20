@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Document</title>
+   </head>
+   <body>
+      <div id="wrapper"></div>
+      <form action="">
+         <select name="" id="" onchange="handleChangeImage()">
+            <option value="150x150">Small</option>
+            <option value="350x150">Medium</option>
+            <option value="750x150">Large</option>
+         </select>
+         <br />
+         Add Text
+         <input type="text" onchange="handleChangeImage()" />
+         <br />
+         Select Color
+         <input type="color" onchange="handleChangeImage()" />
+         <br />
+         <img
+            src="http://via.placeholder.com/350x150/222/fff?text=Image1"
+            id="myImage"
+         />
+      </form>
+
+      <script>
+         let iColor = "222";
+         let iText = "Image1";
+         let iSize = "350x150";
+
+         function handleChangeImage() {
+            console.dir(event.target.value);
+
+            if (event.target.type == "select-one") {
+               iSize = event.target.value;
+            } else if (event.target.type == "text") {
+               iText = event.target.value;
+            } else if ((event.target.type = "color")) {
+               iColor = event.target.value;
+               iColor = iColor.replace("#", "");
+            }
+            var imsrc =
+               "http://via.placeholder.com/" +
+               iSize +
+               "/" +
+               iColor +
+               "/fff?text=" +
+               iText;
+            message(imsrc);
+            event.target.parentElement.myImage.src = imsrc;
+         }
+         function message(m) {
+            document.getElementById("wrapper").innerHTML = m;
+         }
+      </script>
+   </body>
+</html>
