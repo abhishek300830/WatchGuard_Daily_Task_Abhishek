@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Document</title>
+   </head>
+   <body>
+      <form action="" name="myForm">
+         <input class="InputBlock" type="url" id="url" name="url" />
+         <input class="InputBlock" type="text" id="first" name="first" />
+         <input class="InputBlock" type="text" id="last" name="last" />
+         <textarea name="output" id="output" cols="30" rows="10"></textarea>
+
+         <div id="another">
+            <div class="box" id="one"></div>
+            <div class="box" id="two"></div>
+            <div class="box" id="three"></div>
+            <div class="box" id="four"></div>
+            <div class="box" id="five"></div>
+            <div class="box" id="six"></div>
+         </div>
+
+         <input type="button" value="click Here" id="btn1" />
+      </form>
+
+      <script>
+         let tagUrl = document.getElementsByName("url");
+         let classList = document.getElementsByClassName("box");
+         let divList = document.getElementsByTagName("div");
+
+         let InputBlock = document.getElementsByClassName("InputBlock");
+      </script>
+   </body>
+</html>

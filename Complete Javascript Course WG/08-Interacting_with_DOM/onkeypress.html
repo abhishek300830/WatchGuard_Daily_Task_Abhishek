@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Document</title>
+   </head>
+   <body>
+      <div id="output"></div>
+      <div id="onekey"></div>
+      <input type="text" onkeypress="handleKeyPress()" onpaste="return false" />
+
+      <script>
+         function handleKeyPress() {
+            let output = document.getElementById("output");
+            output.innerHTML = event.target.value;
+            let onekey = document.getElementById("onekey");
+            onekey.innerHTML = event.key;
+         }
+      </script>
+   </body>
+</html>

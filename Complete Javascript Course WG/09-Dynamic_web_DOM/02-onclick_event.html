@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Document</title>
+   </head>
+   <body>
+      <div id="message"></div>
+      <br /><br />
+      <div class="output">Test Result 1</div>
+      <div class="output">Test Result 2</div>
+      <div class="output">Test Result 3</div>
+      <div class="output">Test Result 4</div>
+      <div class="output">Test Result 5</div>
+      <div class="output">Test Result 6</div>
+      <div class="output">Test Result 7</div>
+      <div class="output">Test Result 8</div>
+      <div class="output">Test Result 9</div>
+      <div class="output">Test Result 10</div>
+
+      <script>
+         let outputList = document.getElementsByClassName("output");
+         let message = document.getElementById("message");
+
+         console.log(outputList.length);
+
+         for (let x = 0; x < outputList.length; x++) {
+            classElement = outputList[x];
+            console.log(classElement.innerHTML);
+            classElement.onclick = function () {
+               console.log("clicked", event.target.innerHTML);
+               message.innerHTML = event.target.innerHTML;
+            };
+         }
+
+         /* for (output of outputList) {
+            output.onclick = function () {
+               let value = output.innerHTML;
+               console.log(output);
+               message.innerHTML = output.innerHTML;
+            };
+         } */
+      </script>
+   </body>
+</html>

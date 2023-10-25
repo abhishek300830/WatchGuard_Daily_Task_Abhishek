@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Document</title>
+   </head>
+   <style>
+      #message {
+         visibility: hidden;
+      }
+   </style>
+   <body>
+      <div id="message">Hello</div>
+      <input type="button" value="POP" onclick="popUp()" />
+      <input type="button" value="CLOSE" onclick="closePopUp()" />
+
+      <script>
+         var wn;
+         function popUp() {
+            let url = "https://www.google.com";
+            wn = window.open(url, "_blank", "top=100,width=200");
+         }
+
+         function closePopUp() {
+            console.log("hello clicked");
+            wn.close();
+         }
+      </script>
+   </body>
+</html>
