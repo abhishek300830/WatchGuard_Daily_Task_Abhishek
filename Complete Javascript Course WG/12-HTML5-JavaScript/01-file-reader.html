@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Document</title>
+   </head>
+   <body>
+      <input type="file" id="inputFile" />
+      <div id="message"></div>
+      <script>
+         let inputFile = document.getElementById("inputFile");
+
+         inputFile.addEventListener("change", function () {
+            console.log(this);
+         });
+
+         function handleFiles() {
+            const fileList = this.files;
+            console.log(fileList);
+            readFile(fileList);
+         }
+         function readFile(fileList) {
+            let fileReader = new FileReader();
+            fileReader.onload = function (ev) {
+               console.log(ev.target.result);
+            };
+            fileReader.readAsText(fileList[0]);
+         }
+      </script>
+   </body>
+</html>

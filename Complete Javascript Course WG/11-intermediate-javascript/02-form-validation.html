@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Document</title>
+   </head>
+   <body>
+      <input type="email" name="" id="email" value="example@email.com" />
+      <button type="button" onclick="handleEmailValidate()">Validate</button>
+
+      <script>
+         function handleEmailValidate() {
+            let emailValue = document.getElementById("email").value;
+            pattern = /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/gi;
+            let matcher = emailValue.match(pattern);
+            console.log(matcher);
+         }
+      </script>
+   </body>
+</html>

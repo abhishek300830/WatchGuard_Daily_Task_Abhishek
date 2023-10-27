@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Document</title>
+   </head>
+   <body>
+      <div id="output">
+         Complete JavaScript Course Complete JavaScript Course Complete
+         JavaScript Course Complete JavaScript Course Complete JavaScript Course
+      </div>
+      Search for :
+      <input id="searchText" type="text" />
+      <br />
+      Replace with :
+      <input id="regexText" type="text" />
+      <br />
+      <input type="button" onclick="lookUp()" value="find text" />
+      <script>
+         function lookUp() {
+            var output = document.getElementById("output").innerText;
+            var searchText = document.getElementById("searchText").value;
+            var regexText = document.getElementById("regexText").value;
+            var regexExp = new RegExp(searchText, "gi");
+            var result = output.match(regexExp);
+            if (result) {
+               var message = output.replace(regexExp, regexText);
+               document.getElementById("output").innerText = message;
+            }
+            console.log(result);
+         }
+      </script>
+   </body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Document</title>
+   </head>
+   <body>
+      <input
+         type="text"
+         name="textarea"
+         id="textarea"
+         value="abhi@gmail.com udbah@gmail.com nasgagn3242 fa234fad naugs@gmail.com serfar345323524rwef"
+      />
+
+      <script>
+         let inputValue = document.getElementById("textarea").value;
+         pattern = /[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+/gi;
+         let matcher = inputValue.match(pattern);
+         console.log(matcher);
+      </script>
+   </body>
+</html>
