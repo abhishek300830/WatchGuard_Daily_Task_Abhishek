@@ -1,0 +1,16 @@
+<div class="container">
+  <button class="btn btn-primary" (click)="toggleShowDetails()">
+    {{ showDetails ? "Hide Details" : "Show Details" }}
+  </button>
+  <p [ngClass]="{ show: showDetails, hide: !showDetails }">
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos, rerum
+    in, aperiam consequatur doloribus dolorem cumque atque quod deleniti minima
+    nam! Magni, non tempora!
+  </p>
+  <p
+    *ngFor="let item of showDetailsClickLogger"
+    [ngClass]="{ loggerStyle: item.idx > 5 }"
+  >
+    Click Logged at {{ item.date }} .
+  </p>
+</div>

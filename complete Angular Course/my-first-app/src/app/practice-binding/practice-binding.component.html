@@ -1,0 +1,26 @@
+<div class="container">
+  <p>practice-binding works!</p>
+  <input
+    class="form-control"
+    type="text"
+    name=""
+    id=""
+    [(ngModel)]="username"
+    (input)="onInputText($event)"
+  />
+  <div>Username : {{ username }}</div>
+  <button
+    class="btn btn-primary"
+    [disabled]="usernameIsEmpty"
+    (click)="onBtnClick()"
+  >
+    Reset User
+  </button>
+  <button
+    *ngIf="username !== ''"
+    class="btn btn-primary"
+    (click)="onBtnClick()"
+  >
+    Reset User using ngif
+  </button>
+</div>

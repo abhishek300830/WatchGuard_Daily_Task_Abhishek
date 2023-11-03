@@ -1,0 +1,10 @@
+.show{
+    display: block;
+}
+.hide{
+    display: none;
+}
+.loggerStyle{
+    background-color: blue;
+    color: white;
+}
