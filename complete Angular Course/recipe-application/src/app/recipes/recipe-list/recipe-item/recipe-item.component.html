@@ -1,0 +1,15 @@
+<li
+  style="cursor: pointer"
+  class="list-group-item d-flex justify-content-between align-items-start"
+  [routerLink]="[index]"
+  routerLinkActive="active"
+>
+  <!-- (click)="onSelected()" -->
+  <div class="ms-2 me-auto">
+    <div class="fw-bold">{{ recipe.name }}</div>
+    {{ recipe.description }}
+  </div>
+  <div class="list-img">
+    <img src="{{ recipe.imagePath }}" alt="" class="img-responsive" />
+  </div>
+</li>

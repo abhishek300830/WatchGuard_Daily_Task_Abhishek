@@ -1,0 +1,9 @@
+<div *ngFor="let item of array; let i = index">{{ i }} {{ item }}</div>
+<hr />
+<div *ngFor="let item of arrayOfObject; let i = index">
+  {{ i }} {{ item.name }} {{ item.age }}
+</div>
+<hr />
+<div *ngFor="let item of object.keys(objectOfStudent)">
+  key:{{ item }} value:{{ objectOfStudent[item] }}
+</div>

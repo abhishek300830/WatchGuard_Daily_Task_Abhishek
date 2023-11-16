@@ -1,0 +1,7 @@
+.active{
+    scale: 1.1;
+    transition: all .2s;
+}
+.cursor-pointer{
+    cursor: pointer;
+}
