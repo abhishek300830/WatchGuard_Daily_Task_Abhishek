@@ -1,0 +1,26 @@
+<div class="container" *ngIf="onFormSubmitted">
+  <h2 class="h2">User Data</h2>
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Id</th>
+        <th scope="col">Name</th>
+        <th scope="col">Amount</th>
+        <th scope="col">Type</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let key of Object.keys(ReimbursementData)">
+        <td *ngFor="let value of Object.values(ReimbursementData[key])">
+          {{ value }}
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- <div *ngFor="let key of Object.keys(ReimbursementData)">
+  <div *ngFor="let value of Object.values(ReimbursementData[key])">
+    {{ value }}
+  </div>
+</div> -->

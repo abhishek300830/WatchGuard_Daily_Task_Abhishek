@@ -1,0 +1,91 @@
+<form (ngSubmit)="onFormSubmit()" #userDetailsForm="ngForm">
+  <div class="input-group mb-3" ngModelGroup="userDetails">
+    <input
+      class="form-control"
+      type="number"
+      name="id"
+      [(ngModel)]="userDetails.employeeId"
+      id="id"
+      placeholder="Enter Employee ID Here"
+      required
+    />
+
+    <input
+      class="form-control"
+      type="text"
+      id="name"
+      [(ngModel)]="userDetails.name"
+      name="name"
+      placeholder="Enter User Name"
+      required
+    />
+    <input
+      class="form-control"
+      type="text"
+      id="designation"
+      [(ngModel)]="userDetails.designation"
+      name="designation"
+      placeholder="Enter User Designation"
+      required
+    />
+  </div>
+  <ng-container ngModelGroup="userReimbursement">
+    <div
+      class="input-group mb-2"
+      *ngFor="let inputGroup of userDetails.reimbursements; let i = index"
+    >
+      <div></div>
+      <input
+        class="form-control"
+        type="text"
+        [(ngModel)]="inputGroup.id"
+        name="id{{ i }}"
+        placeholder="Enter Reimbursement ID"
+        required
+      />
+      <input
+        class="form-control"
+        type="text"
+        [(ngModel)]="inputGroup.name"
+        name="name{{ i }}"
+        placeholder="Enter Your Reimbursement Here"
+        required
+      />
+      <input
+        class="form-control"
+        type="number"
+        [(ngModel)]="inputGroup.amount"
+        name="amount {{ i }}"
+        placeholder="Enter Amount Here"
+        required
+      />
+      <select
+        class="form-control"
+        name="type{{ i }}"
+        [(ngModel)]="inputGroup.type"
+      >
+        <option value="" selected disabled>Select Type</option>
+        <option value="cash">Cash</option>
+        <option value="online">Online</option>
+      </select>
+      <button
+        class="btn btn-danger"
+        type="button"
+        (click)="deleteInputGroup(i)"
+        [ngClass]="{ 'display-none': userDetails.reimbursements.length == 1 }"
+      >
+        Delete
+      </button>
+    </div>
+  </ng-container>
+
+  <br />
+  <button
+    type="button"
+    class="btn btn-success m-1"
+    (click)="addNewInputGroup()"
+  >
+    Add New
+  </button>
+  <button class="btn btn-primary" type="submit">Submit</button>
+</form>

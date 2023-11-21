@@ -1,0 +1,52 @@
+<form (ngSubmit)="onSubmit()" #f="ngForm">
+  <div class="m-1" *ngFor="let inputGroup of inputGroupRef">
+    <div
+      class="input-group"
+      ngModelGroup="{{ inputGroup }}"
+      #[{{inputgroup}}]="ngModelGroup"
+    >
+      <input
+        class="form-control"
+        type="text"
+        id="id"
+        ngModel
+        name="id"
+        placeholder="Enter User ID"
+      />
+      <input
+        class="form-control"
+        type="text"
+        ngModel
+        name="name"
+        id="name"
+        placeholder="Enter Your Name Here"
+      />
+      <input
+        class="form-control"
+        type="number"
+        ngModel
+        name="amount"
+        id="amount"
+        placeholder="Enter Amount Here"
+      />
+      <select class="form-control" name="type" id="type" ngModel>
+        <option value="" selected disabled>Select Type</option>
+        <option value="cash">Cash</option>
+        <option value="online">Online</option>
+      </select>
+      <button
+        class="btn btn-danger"
+        type="button"
+        (click)="deleteInputGroup(inputGroup)"
+      >
+        Delete
+      </button>
+    </div>
+  </div>
+
+  <br />
+  <button class="btn btn-success m-1" (click)="addNewInputGroup()">
+    Add New
+  </button>
+  <button class="btn btn-primary" type="submit">Submit</button>
+</form>

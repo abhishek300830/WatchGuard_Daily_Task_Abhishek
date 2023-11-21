@@ -1,0 +1,12 @@
+<div class="container">
+  <h1 class="h1">Reimbursement Application</h1>
+
+  <app-home
+    (userForm)="getUserForm($event)"
+    (formSubmitted)="onFormSubmitted($event)"
+  ></app-home>
+  <app-display-reimbursement
+    [ReimbursementData]="formValue"
+    [onFormSubmitted]="isFormSubmitted"
+  ></app-display-reimbursement>
+</div>
