@@ -10,7 +10,6 @@ import { InputDetailsComponent } from './input-details/input-details.component';
 @NgModule({
   declarations: [AppComponent, DisplayDetailsComponent, InputDetailsComponent],
   imports: [BrowserModule, AppRoutingModule, FormsModule],
-  providers: [],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

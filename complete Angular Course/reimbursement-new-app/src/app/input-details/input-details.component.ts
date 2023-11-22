@@ -1,4 +1,4 @@
-import { Component, EventEmitter } from '@angular/core';
+import { Component } from '@angular/core';
 
 import { UserService } from './../app.service';
 import { UserDetailModel } from '../app.model';
@@ -9,8 +9,6 @@ import { UserDetailModel } from '../app.model';
   styleUrls: ['./input-details.component.css'],
 })
 export class InputDetailsComponent {
-  // @ViewChild('userDetailsForm') reimbursementForm: NgForm;
-
   userDetails: UserDetailModel;
 
   constructor(private userService: UserService) {}
@@ -33,6 +31,6 @@ export class InputDetailsComponent {
   }
 
   onFormSubmit() {
-    this.userService.newSubject.next(true);
+    this.userService.submitClickedSub$.next(true);
   }
 }
