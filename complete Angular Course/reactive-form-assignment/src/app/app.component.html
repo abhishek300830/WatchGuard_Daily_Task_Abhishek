@@ -1,0 +1,37 @@
+<h1>Reactive Form</h1>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+      <form
+        [formGroup]="reactiveForm"
+        (ngSubmit)="onSubmit()"
+        class="input-group"
+      >
+        <input
+          class="form-control"
+          formControlName="projectName"
+          type="text"
+          placeholder="Enter Project Name"
+        />
+        <input
+          class="form-control"
+          formControlName="email"
+          type="email"
+          name="email"
+          placeholder="Enter Email Here"
+        />
+        <select
+          formControlName="projectStatus"
+          class="form-control"
+          name="project-status"
+        >
+          <option value="choose" selected disabled>Select Option</option>
+          <option value="stable">stable</option>
+          <option value="critical">critical</option>
+          <option value="finished">finished</option>
+        </select>
+        <button class="btn btn-primary" type="submit">Submit</button>
+      </form>
+    </div>
+  </div>
+</div>
