@@ -15,7 +15,7 @@ export class DisplayDetailsComponent {
   constructor(private userService: UserService) {}
 
   ngOnInit() {
-    this.userService.submitClickedSub$.subscribe(() => {
+    this.userService.onSubmitClicked$.subscribe(() => {
       this.userDetails = Object.assign({}, this.userService.userDetails);
 
       this.userReimbursementArray =

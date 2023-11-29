@@ -5,5 +5,5 @@ import { Subject } from 'rxjs';
 @Injectable({ providedIn: 'root' })
 export class UserService {
   public userDetails: UserDetailModel = new UserDetailModel();
-  submitClickedSub$ = new Subject<Boolean>();
+  onSubmitClicked$ = new Subject<Boolean>();
 }

@@ -7,5 +7,6 @@ OPENAPI_SWAGGER_UI_URL = "https://cdn.jsdelivr.net/npm/swagger-ui-dist/"
 
 
 SQL_QUERYS_JSON_PATH = (
-    r"C:\Programming\Banking_Managemnet_System_Fast_API\src\utils\queries.json"
+    # r"C:\Programming\Banking_Managemnet_System_Fast_API\src\utils\queries.json"
+    r"C:\Programming\WatchGuard_daily_task_Abhishek\Banking_Managemnet_System_Fast_API\src\utils\queries.json"
 )
