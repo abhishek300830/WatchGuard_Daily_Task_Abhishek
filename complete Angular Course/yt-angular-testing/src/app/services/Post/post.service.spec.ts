@@ -27,17 +27,18 @@ describe('Post Service', () => {
         title: 'title 3',
       },
     ];
-    httpClientSpy = jasmine.createSpyObj('HttpClient', ['get']);
+    let httpClientSpyObj = jasmine.createSpyObj('HttpClient', ['get']);
     TestBed.configureTestingModule({
       providers: [
         PostService,
         {
           provide: HttpClient,
-          useValue: httpClientSpy,
+          useValue: httpClientSpyObj,
         },
       ],
     });
     postService = TestBed.inject(PostService);
+    httpClientSpy = TestBed.inject(HttpClient) as jasmine.SpyObj<HttpClient>;
   });
 
   describe('getPosts()', () => {
